@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--Toolbar-->
+    <color name="darkColorPrimary">#424242</color>
+    <!--System bar-->
+    <color name="darkColorPrimaryDark">#212121</color>
+    <!--Eg. floating bar.-->
+    <color name="darkColorAccent">#BDBDBD</color>
+    <!--Text-->
+    <color name="darkTextColor">#EEEEEE</color>
+
+    <color name="textHot">#E65100</color>
+    <color name="green">#3b915f</color>
+    <color name="red">#c0392b</color>
+</resources>

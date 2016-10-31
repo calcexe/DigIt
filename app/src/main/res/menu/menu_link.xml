@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/dig" android:id="@+id/menu_link_upvote" />
+    <item android:title="@string/bury" android:id="@+id/menu_link_downvote"/>
+    <item android:title="@string/favourite" android:id="@+id/menu_link_favourite"/>
+    <item android:title="@string/share" android:id="@+id/menu_link_share"/>
+    <item android:title="@string/later" android:id="@+id/menu_link_later" android:visible="false"/>
+</menu>

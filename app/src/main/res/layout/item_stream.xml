@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/entry_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardUseCompatPadding="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="1">
+
+        <TableRow>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/entry_author_avatar"
+                android:text="@string/author_placeholder"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_column="0"
+                android:padding="@dimen/padding_normal"
+                android:src="@drawable/preview"/>
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:stretchColumns="0">
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/entry_author"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_gravity="bottom"
+                            android:text="@string/author_placeholder"/>
+
+                        <ImageView
+                            android:id="@+id/entry_menu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:contentDescription="@string/menu"
+                            android:padding="@dimen/padding_normal"
+                            android:paddingTop="@dimen/padding_normal"
+                            android:src="@drawable/ic_more_white_18dp"/>
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/entry_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorAccent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/padding_small"
+                        android:paddingLeft="@dimen/padding_small"
+                        android:paddingRight="@dimen/padding_small"
+                        android:paddingStart="@dimen/padding_small"
+                        android:text="@string/dot"
+                        android:textColor="?attr/colorAccent"/>
+
+                    <TextView
+                        android:id="@+id/entry_comments_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorAccent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_column="0"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/entry_up_vote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/dig"
+                    android:src="?attr/arrowUpEnable"/>
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@+id/entry_plus_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lines="1"/>
+
+                <ImageView
+                    android:id="@+id/entry_down_vote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/bury"
+                    android:src="?attr/arrowDownEnable"/>
+
+            </LinearLayout>
+
+            <!--<WebView-->
+                <!--android:id="@+id/entry_title"-->
+                <!--android:layout_column="1"-->
+                <!--android:layout_weight="1"-->
+                <!--android:autoLink="web"/>-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_column="1">
+
+                <TextView
+                    android:id="@+id/entry_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:paddingBottom="@dimen/padding_normal"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:paddingBottom="@dimen/padding_normal"
+                    android:id="@+id/entry_image"
+                    android:contentDescription="@string/preview"/>
+
+
+                <!--TODO: Move sizes to values.xml-->
+
+
+            </LinearLayout>
+
+
+
+        </TableRow>
+
+        <!--<TableRow>-->
+            <!--<ImageView-->
+                <!--android:id="@+id/entry_image"-->
+                <!--android:adjustViewBounds="true"-->
+                <!--android:layout_column="1"/>-->
+        <!--</TableRow>-->
+
+    </TableLayout>
+
+</android.support.v7.widget.CardView>

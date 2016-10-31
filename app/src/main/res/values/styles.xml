@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="WykopDark" parent="Theme.AppCompat">
+        <!-- Disable default actionbar and enable toolbar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="colorPrimary">@color/darkColorPrimary</item>
+        <item name="colorPrimaryDark">@color/darkColorPrimaryDark</item>
+        <item name="android:textColor">@color/darkTextColor</item>
+        <item name="colorPrimaryLight">@color/darkTextColor</item>
+        <item name="colorAccent">@color/darkColorAccent</item>
+
+        <item name="arrowUpEnable">@drawable/arrow_up_light</item>
+        <item name="arrowDownEnable">@drawable/arrow_down_light</item>
+
+    </style>
+
+    <style name="Wykop.Toolbar" parent="AlertDialog.AppCompat">
+
+    </style>
+
+    <style name="Wykop.Toolbar.Spinner" parent="WykopDark">
+        <item name="colorControlNormal">?attr/colorPrimaryLight</item>
+        <item name="colorControlActivated">?attr/colorAccent</item>
+        <item name="colorControlHighlight">#000000</item>
+        <item name="android:textColor">@color/darkTextColor</item>
+    </style>
+
+
+    <!--TODO: Change collors-->
+    <style name="WykopLight" parent="Theme.AppCompat.Light">
+        <!-- Disable default actionbar and enable toolbar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/darkTextColor</item>
+        <item name="colorPrimaryLight">@color/darkTextColor</item>
+
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>

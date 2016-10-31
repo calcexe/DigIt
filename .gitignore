@@ -38,3 +38,9 @@ captures/
 
 # Keystore files
 *.jks
+
+# Magic File
+Secrets.java
+
+# Magic Folder?
+projectFilesBackup/

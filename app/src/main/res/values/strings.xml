@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Wykop</string>
+
+    <string name="dot">•</string>
+    <string name="refresh">Odśwież</string>
+    <string name="notifications">Powiadomienia</string>
+    <string name="share">Udostępnij</string>
+    <string name="favourite">Ulubiony</string>
+    <string name="bury">Zakop</string>
+    <string name="dig">Wykop</string>
+    <string name="menu">Menu</string>
+    <string name="later">Na później</string>
+    <string name="promoted">Główna</string>
+    <string name="upcoming">Wykopalisko</string>
+    <string name="favorites">Ulubione</string>
+    <string name="remove_favourite">Usuń z ulubionych</string>
+    <string name="read_more">Czytaj dalej…</string>
+    <string name="more">Więcej</string>
+    <string name="add">Dodaj</string>
+    <string name="to_up">Do góry</string>
+    <string name="preview">Podgląd</string>
+    <string name="stream">Mikroblog</string>
+    <string name="settings">Ustawienia</string>
+    <string name="sign_in">Zaloguj</string>
+    <string name="sign_out">Wyloguj</string>
+    <string name="all">Wszystkie</string>
+    <string name="hot">Gorące</string>
+    <string name="bury_title">Zakop…</string>
+
+    <array name="hot_range">
+        <item>6h</item>
+        <item>12h</item>
+        <item>24h</item>
+    </array>
+
+    <array name="index_view_pager">
+        <item>@string/promoted</item>
+        <item>@string/upcoming</item>
+        <item>@string/favorites</item>
+    </array>
+
+    <array name="stream_view_pager">
+        <item>@string/all</item>
+        <item>@string/hot</item>
+        <item>@string/favorites</item>
+    </array>
+
+    <array name="navigation_items">
+        <item>@string/app_name</item>
+        <item>@string/stream</item>
+        <!--<item>@string/settings</item>-->
+    </array>
+
+    <!--Placeholders:-->
+    <string name="author_placeholder">\@%s</string>
+
+</resources>

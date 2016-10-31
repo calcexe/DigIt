@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_refresh"
+        android:icon="@drawable/ic_refresh_white_24dp"
+        android:title="@string/refresh"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_to_up"
+        android:icon="@drawable/arrow_up_light"
+        android:title="@string/to_up"
+        app:showAsAction="always|withText"/>
+
+    <item
+        android:id="@+id/menu_more"
+        android:icon="@drawable/ic_more_white_18dp"
+        android:title="@string/more"
+        android:visible="false"
+        app:showAsAction="ifRoom">
+
+        <menu>
+
+            <item
+                android:id="@+id/menu_add"
+                android:icon="@drawable/ic_plus_white_24dp"
+                android:title="@string/add"
+                app:showAsAction="ifRoom|withText"/>
+
+            <item
+                android:id="@+id/menu_notifications"
+                android:icon="@drawable/ic_notifications_white_24dp"
+                android:title="@string/notifications"
+                app:showAsAction="always"/>
+
+        </menu>
+
+    </item>
+</menu>
