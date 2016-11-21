@@ -10,7 +10,6 @@ public class LoadEvent {
         this.page = page;
     }
 
-
     public int getPage() {
         return page;
     }

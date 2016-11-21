@@ -1,5 +1,6 @@
 package pl.calc_exe.wykop.view.fragments;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -21,6 +22,7 @@ import pl.calc_exe.wykop.events.ActionBarEvent;
 import pl.calc_exe.wykop.events.LoadEvent;
 import pl.calc_exe.wykop.extras.Extras;
 import pl.calc_exe.wykop.extras.Pages;
+import pl.calc_exe.wykop.presenter.fragments.StreamPresenter;
 
 public class ViewPagerFragment extends Fragment {
     @BindView(R.id.view_pager) ViewPager viewPager;
@@ -37,7 +39,7 @@ public class ViewPagerFragment extends Fragment {
         boolean isLogged = getArguments().getBoolean(Extras.IS_LOGGED);
         switch (page){
             case Pages.INDEX:
-                adapter = new IndexViewPagerAdapter(this, isLogged, Pages.Index.PROMOTED);
+                adapter = new IndexViewPagerAdapter(this, isLogged);
                 break;
             case Pages.STREAM:
                 adapter = new StreamViewPagerAdapter(this, isLogged, Pages.Stream.INDEX);
@@ -60,6 +62,14 @@ public class ViewPagerFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
+
+                Fragment fragment = getChildFragmentManager().findFragmentByTag("android:switcher:" + R.id.view_pager + ":" + viewPager.getCurrentItem());
+                // based on the current position you can then cast the page to the correct
+                // class and call the method:
+                if (viewPager.getCurrentItem() == 0 && fragment != null) {
+                    ((FragmentClass1)page).updateList("new item");
+                }
+
                 EventBus.getDefault().post(new LoadEvent(position));
                 EventBus.getDefault().post(new ActionBarEvent(page, position));
             }

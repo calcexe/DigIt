@@ -12,7 +12,7 @@ import pl.calc_exe.wykop.extras.ErrorManager;
 import pl.calc_exe.wykop.extras.Extras;
 import pl.calc_exe.wykop.model.domain.Error;
 import pl.calc_exe.wykop.model.domain.Profile;
-import pl.calc_exe.wykop.model.domain.extras.IError;
+import pl.calc_exe.wykop.model.domain.extras.ErrorItem;
 import pl.calc_exe.wykop.model.rest.services.UserService;
 import retrofit2.Retrofit;
 import rx.Subscriber;
@@ -23,7 +23,7 @@ import rx.schedulers.Schedulers;
 /**
  * Universal class to receive object. Supports re-login if userkey is out-of-date.
  * */
-public class Receiver<T extends IError> {
+public class Receiver<T extends ErrorItem> {
 
     private IObservatorSupplier<T> supplier;
     private Action1<T> action;

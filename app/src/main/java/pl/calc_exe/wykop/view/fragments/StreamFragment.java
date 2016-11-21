@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,7 +60,6 @@ public class StreamFragment extends Fragment implements IView {
         super.onCreate(savedInstanceState);
         DaggerMainComponent.builder().presentersModule(new PresentersModule()).networkModule(new NetworkModule()).preferencesModule(new PreferencesModule()).build().inject(this);
 
-        EventBus.getDefault().register(this);
         getBundle();
         presenter.setPageType(pageType);
     }
@@ -97,16 +97,22 @@ public class StreamFragment extends Fragment implements IView {
             });
         }
 
-        if (startPage)
+        if (getUserVisibleHint())
             presenter.load();
 
         return view;
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (!isVisibleToUser) {
+            if (EventBus.getDefault().isRegistered(this))
+                EventBus.getDefault().unregister(this);
+        } else{
+            if (!EventBus.getDefault().isRegistered(this))
+                EventBus.getDefault().register(this);
+        }
     }
 
     /**
@@ -159,5 +165,11 @@ public class StreamFragment extends Fragment implements IView {
 
     public void scroll(int position) {
         layoutManager.scrollToPosition(position);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.e("Pause", "pause");
     }
 }

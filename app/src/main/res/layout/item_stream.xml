@@ -79,6 +79,7 @@
                         android:paddingRight="@dimen/padding_small"
                         android:paddingStart="@dimen/padding_small"
                         android:text="@string/dot"
+                        android:id="@+id/entry_date_separator"
                         android:textColor="?attr/colorAccent"/>
 
                     <TextView

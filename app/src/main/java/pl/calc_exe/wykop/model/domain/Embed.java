@@ -18,7 +18,7 @@ public class Embed {
     private String preview;
 
     @Expose @SerializedName("type")
-    private String type;
+    private String type = "none";
 
     @Expose @SerializedName("plus18")
     private Boolean plus18;

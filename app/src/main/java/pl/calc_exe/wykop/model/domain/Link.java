@@ -10,11 +10,11 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.calc_exe.wykop.model.domain.extras.IError;
+import pl.calc_exe.wykop.model.domain.extras.ErrorItem;
 import pl.calc_exe.wykop.model.domain.extras.IdItem;
 
 @Getter
-public class Link implements IdItem, IError {
+public class Link implements IdItem, ErrorItem {
 
     @Expose @SerializedName("error")
     private Error error = new Error();

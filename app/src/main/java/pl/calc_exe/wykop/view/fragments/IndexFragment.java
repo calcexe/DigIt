@@ -24,7 +24,6 @@ import pl.calc_exe.wykop.di.modules.NetworkModule;
 import pl.calc_exe.wykop.di.modules.PresentersModule;
 import pl.calc_exe.wykop.events.LoadEvent;
 import pl.calc_exe.wykop.events.MainMenuEvent;
-import pl.calc_exe.wykop.extras.Extras;
 import pl.calc_exe.wykop.extras.Pages;
 import pl.calc_exe.wykop.presenter.fragments.IndexPresenter;
 import pl.calc_exe.wykop.view.extras.IView;
@@ -37,13 +36,20 @@ public class IndexFragment extends Fragment implements IView {
     @Inject IndexPresenter presenter;
 
     private int pageType;
-    private boolean startPage;
 
     private final int LOAD_THRESHOLD = 2;
 
     @BindView(R.id.main_recycler_view) RecyclerView recyclerView;
     @BindView(R.id.refresh_layout) SwipeRefreshLayout refreshLayout;
     private LinearLayoutManager layoutManager;
+
+    public static IndexFragment getInstance(int position) {
+        IndexFragment fragment = new IndexFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(Pages.PAGE, position);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -133,12 +139,12 @@ public class IndexFragment extends Fragment implements IView {
     /**
      * Event to load elements for first time only after selection this page in ViewPage.
      */
-    @Subscribe
-    public void onLoadEvent(LoadEvent event) {
-        if (event.getPage() == pageType) {
-            presenter.load();
-        }
-    }
+//    @Subscribe
+//    public void onLoadEvent(LoadEvent event) {
+//        if (event.getPage() == pageType) {
+//            presenter.load();
+//        }
+//    }
 
     public void setAdapter(IndexListAdapter adapter) {
         recyclerView.setAdapter(adapter);
@@ -148,7 +154,6 @@ public class IndexFragment extends Fragment implements IView {
         Bundle bundle = getArguments();
         if (bundle != null) {
             pageType = bundle.getInt(Pages.PAGE, Pages.Stream.INDEX);
-            startPage = bundle.getBoolean(Extras.START_PAGE, true);
         }
     }
 

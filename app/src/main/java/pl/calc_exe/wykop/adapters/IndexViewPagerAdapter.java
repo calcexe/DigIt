@@ -11,25 +11,17 @@ import pl.calc_exe.wykop.view.fragments.IndexFragment;
 
 public class IndexViewPagerAdapter extends FragmentPagerAdapter {
 
-    private int startPage;
     private boolean isLogged;
     private String[] titles;
 
-    public IndexViewPagerAdapter(Fragment fragment, boolean isLogged, int startPage) {
+    public IndexViewPagerAdapter(Fragment fragment, boolean isLogged) {
         super(fragment.getChildFragmentManager());
         titles = fragment.getResources().getStringArray(R.array.index_view_pager);
         this.isLogged = isLogged;
-        this.startPage = startPage;
     }
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = new IndexFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt(Pages.PAGE, position);
-        bundle.putBoolean(Extras.START_PAGE, startPage == position);
-        fragment.setArguments(bundle);
-
-        return fragment;
+        return IndexFragment.getInstance(position);
     }
 
     @Override

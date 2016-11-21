@@ -10,6 +10,7 @@ public class Extras {
     public static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
     public static final String IS_LOGGED = "islogged";
     public static final String START_PAGE = "startPage";
+    public static final String ENTRY_ID = "entryId";
 
     static {
         SECRET = Secrets.SECRET;

@@ -1,6 +1,7 @@
 package pl.calc_exe.wykop.events;
 
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 
 import pl.calc_exe.wykop.extras.Pages;
 

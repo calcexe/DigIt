@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements IView, AdapterVie
 
         if (addToBackStack) {
             fragmentManager
-                    .add(fragmentsContainer.getId(), fragment, null)
+                    .replace(fragmentsContainer.getId(), fragment)
                     .addToBackStack(null);
         } else {
             fragmentManager.replace(fragmentsContainer.getId(), fragment);

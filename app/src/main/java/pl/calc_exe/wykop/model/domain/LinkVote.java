@@ -4,10 +4,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Getter;
-import pl.calc_exe.wykop.model.domain.extras.IError;
+import pl.calc_exe.wykop.model.domain.extras.ErrorItem;
 
 @Getter
-public class LinkVote implements IError{
+public class LinkVote implements ErrorItem {
 
     @Expose @SerializedName("error")
     private Error error = new Error();
